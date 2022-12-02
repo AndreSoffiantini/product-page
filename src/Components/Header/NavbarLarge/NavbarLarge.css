@@ -1,0 +1,17 @@
+.navbar_large {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar_large .navbar_link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 30px;
+}
+
+.navbar_large .buttons_container {
+  display: inline-flex;
+}
