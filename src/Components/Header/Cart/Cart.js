@@ -1,17 +1,21 @@
 import "./Cart.css";
+import { useContext } from "react";
+import CartSetterContext from "../../../Context/Cart/CartSetterContext";
+import CartContext from "../../../Context/Cart/CartContext";
 
 import cart from "../../../images/icon-cart.svg";
 
 const Cart = () => {
-  const showCart = () => {
-    console.log("show");
-    //mostrare cart vuoto se cartItems è vuoto
-  };
+  const { setIsCartOpen } = useContext(CartSetterContext);
+  const { cartItems, isCartOpen } = useContext(CartContext);
 
   return (
-    <>
-      <img src={cart} alt="cart" onClick={() => showCart()} />
-    </>
+    <div className="cart_icons">
+      <img src={cart} alt="cart" onClick={() => setIsCartOpen(!isCartOpen)} />
+      <div className="cart_dimension">
+        {cartItems?.length ? cartItems?.length * cartItems[0].quantity : null}
+      </div>
+    </div>
   );
 };
 

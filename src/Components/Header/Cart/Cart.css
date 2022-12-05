@@ -1,0 +1,14 @@
+.cart_icons {
+  position: relative;
+}
+
+.cart_dimension {
+  background-color: orange;
+  color: white;
+  padding: 0 8px;
+  border-radius: 10px;
+  position: absolute;
+  right: -7px;
+  top: -7px;
+  font-size: 10px;
+}
