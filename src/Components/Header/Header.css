@@ -1,15 +1,17 @@
 .header {
   width: 100%;
-  height: 60px;
+  height: 100px;
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
   padding: 35px 20px;
+  border-bottom: 1px solid hsl(220, 14%, 75%);
 }
 
 .header_left {
   display: flex;
   align-items: baseline;
+  height: 100%;
 }
 
 .header_right {
@@ -17,14 +19,20 @@
   align-items: center;
 }
 
-.header_right img {
+.header_right > img {
   width: 25px;
   margin-left: 15px;
+  border-radius: 50%;
+}
+
+.header_right > img:hover {
+  border: 2px solid hsl(26, 100%, 55%);
+  cursor: pointer;
 }
 
 @media screen and (min-width: 992px) {
   .header {
-    padding: 45px 10%;
+    padding: 0px 10%;
   }
 
   .header_left {

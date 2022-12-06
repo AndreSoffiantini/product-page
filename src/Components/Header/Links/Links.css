@@ -11,5 +11,12 @@
     font-weight: 100;
     font-size: smaller;
     color: hsl(219, 9%, 45%);
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .link:hover {
+    border-bottom: 3px solid hsl(26, 100%, 55%);
   }
 }

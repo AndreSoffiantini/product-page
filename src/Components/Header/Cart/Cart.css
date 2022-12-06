@@ -2,6 +2,11 @@
   position: relative;
 }
 
+.cart_icons img:hover {
+  filter: brightness(0%);
+  cursor: pointer;
+}
+
 .cart_dimension {
   background-color: orange;
   color: white;

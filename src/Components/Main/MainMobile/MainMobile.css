@@ -12,12 +12,26 @@
   width: 96%;
   height: 250px;
   margin: auto;
-  padding: 15px 20px;
   border-radius: 15px;
   font-size: 16px;
   position: absolute;
   background-color: white;
   visibility: hidden;
+}
+
+.cart_header {
+  height: 20%;
+  padding: 20px;
+  border-bottom: 1px solid hsl(223, 64%, 98%);
+}
+
+.cart_main {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 25px 30px 25px;
 }
 
 .arrows_container {
@@ -74,6 +88,18 @@
 .original_price {
   justify-self: end;
   text-decoration: line-through;
+  font-weight: bold;
+  color: hsl(220, 14%, 75%);
+  margin-left: auto;
+}
+
+.discount_percentage {
+  background-color: hsl(25, 100%, 94%);
+  color: hsl(26, 100%, 55%);
+  font-weight: bold;
+  padding: 3px 7px;
+  border-radius: 5px;
+  margin-left: 10px;
 }
 
 .buttons_section {
@@ -82,32 +108,43 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px;
-  background-color: lightgray;
+  background-color: hsl(223, 64%, 98%);
   border-radius: 12px;
 }
 
 .large_btn {
-  margin-top: 15px;
+  margin-top: 7px;
   display: flex;
   align-items: center;
   justify-content: center;
   column-gap: 0.75rem;
   color: white;
-  background-color: orange;
+  background-color: hsl(26, 100%, 55%);
   width: 100%;
-  padding: 15px;
-  border-radius: 12px;
+  padding: 20px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.large_btn img {
+  filter: brightness(0%) invert();
 }
 
 .product_thumbnail {
   width: 50px;
+  border-radius: 5px;
 }
 
 .cart_product_details {
   margin: 20px 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.cart_product_info {
+  transform: translate(0, -10px);
 }
 
 .delete_icon {
@@ -116,4 +153,6 @@
 
 .empty_cart_message {
   text-align: center;
+  font-weight: bold;
+  color: hsl(219, 9%, 45%);
 }

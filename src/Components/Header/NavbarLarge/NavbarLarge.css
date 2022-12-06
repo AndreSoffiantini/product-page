@@ -16,3 +16,9 @@
 .navbar_large .buttons_container {
   display: inline-flex;
 }
+
+@media screen and (min-width: 992px) {
+  .navbar_link {
+    height: 100%;
+  }
+}
