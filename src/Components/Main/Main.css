@@ -1,35 +1,51 @@
-/* .main_content .btn {
-  margin-top: 20px;
-  padding: 15px 20px;
-  border-radius: 15px;
-  background-color: hsl(0, 0%, 8%);
-  color: hsl(0, 0%, 98%);
-  font-size: 16px;
-  border: 2px solid hsl(0, 0%, 41%);
-  border-color: hsl(0, 0%, 8%);
-} */
+.product_image {
+  width: 100%;
+  height: 290px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+}
 
 .cart_section {
-  width: 350px;
+  width: 96%;
+  height: 85%;
   margin: auto;
   padding: 15px 20px;
   border-radius: 15px;
   font-size: 16px;
-  border: 2px solid hsl(0, 0%, 41%);
-  border-color: hsl(0, 0%, 8%);
-  display: none;
+  position: absolute;
+  background-color: white;
+  visibility: hidden;
 }
 
-.display {
-  display: block;
+.arrows_container {
+  visibility: hidden;
+  width: 95%;
+  align-self: center;
+  display: flex;
+  justify-content: space-between;
 }
 
-.product_image {
-  width: 100%;
-  height: 290px;
-  background-image: url("../../images/image-product-1.jpg");
-  background-size: cover;
-  background-position: center;
+.arrow {
+  border-radius: 100%;
+  height: 40px;
+  width: 40px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.arrow img {
+  width: 10px;
+}
+
+.visible {
+  visibility: visible;
 }
 
 .product_section {
@@ -97,4 +113,8 @@
 
 .delete_icon {
   height: 15px;
+}
+
+.empty_cart_message {
+  text-align: center;
 }

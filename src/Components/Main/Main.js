@@ -7,15 +7,17 @@ import CartContext from "../../Context/Cart/CartContext";
 import deleteIcon from "../../images/icon-delete.svg";
 import cart from "../../images/icon-cart.svg";
 import productThumbnail from "../../images/image-product-1-thumbnail.jpg";
-import productImage from "../../images/image-product-1.jpg";
 import plus from "../../images/icon-plus.svg";
 import minus from "../../images/icon-minus.svg";
+import previous from "../../images/icon-previous.svg";
+import next from "../../images/icon-next.svg";
 
 const Main = () => {
   const { addToCart, removeFromCart } = useContext(CartSetterContext);
   const { cartItems, isCartOpen } = useContext(CartContext);
 
   const [quantity, setQuantity] = useState(1);
+  const [productNumber, setProductNumber] = useState(1);
 
   const [product] = useState({
     id: 1,
@@ -26,8 +28,6 @@ const Main = () => {
     price: 125.0,
     discountPercentage: 0.5,
     quantity: 1,
-    image: productImage,
-    thumbnail: productThumbnail,
   });
 
   const handleAddToCart = () => {
@@ -36,46 +36,96 @@ const Main = () => {
     addToCart(newProduct);
   };
 
+  const handleArrowClick = (scroll_direction) => {
+    switch (scroll_direction) {
+      case "next":
+        if (productNumber < 4) {
+          setProductNumber(productNumber + 1);
+        } else {
+          setProductNumber(1);
+        }
+
+        break;
+
+      case "previous":
+        if (productNumber > 1) {
+          setProductNumber(productNumber - 1);
+        } else {
+          setProductNumber(4);
+        }
+
+        break;
+
+      default:
+        break;
+    }
+  };
+
   return (
     <main className="main_content">
-      <div className={classnames("cart_section", { display: isCartOpen })}>
-        <h2>Cart</h2>
-        <hr></hr>
+      <div
+        className="product_image"
+        style={{
+          backgroundImage: `url(${
+            process.env.PUBLIC_URL +
+            "/product-images/image-product-" +
+            productNumber.toString() +
+            ".jpg"
+          })`,
+        }}
+      >
+        <div
+          className={classnames("arrows_container", { visible: !isCartOpen })}
+        >
+          <button className="arrow" onClick={() => handleArrowClick("prev")}>
+            <img src={previous} alt="previous" />
+          </button>
+          <button className="arrow">
+            <img
+              src={next}
+              alt="next"
+              onClick={() => handleArrowClick("next")}
+            />
+          </button>
+        </div>
 
-        {cartItems?.length ? (
-          <>
-            <div className="cart_product_details">
-              <img
-                className="product_thumbnail"
-                src={productThumbnail}
-                alt={cartItems[0]?.title + " thumbnail"}
-              />
-              <div className="cart_product_info">
-                <div className="text">{cartItems[0]?.title}</div>
-                <span style={{ marginRight: "5px" }}>
-                  ${cartItems[0]?.price.toFixed(2)} x {cartItems[0]?.quantity}
-                </span>
-                <span style={{ fontWeight: "bold" }}>
-                  ${(cartItems[0]?.price * cartItems[0]?.quantity).toFixed(2)}
-                </span>
+        <div className={classnames("cart_section", { visible: isCartOpen })}>
+          <h2>Cart</h2>
+          <hr></hr>
+
+          {cartItems?.length ? (
+            <>
+              <div className="cart_product_details">
+                <img
+                  className="product_thumbnail"
+                  src={productThumbnail}
+                  alt={cartItems[0]?.title + " thumbnail"}
+                />
+                <div className="cart_product_info">
+                  <div className="text">{cartItems[0]?.title}</div>
+                  <span style={{ marginRight: "5px" }}>
+                    ${cartItems[0]?.price.toFixed(2)} x {cartItems[0]?.quantity}
+                  </span>
+                  <span style={{ fontWeight: "bold" }}>
+                    ${(cartItems[0]?.price * cartItems[0]?.quantity).toFixed(2)}
+                  </span>
+                </div>
+
+                <img
+                  src={deleteIcon}
+                  alt="delete"
+                  className="delete_icon"
+                  onClick={() => removeFromCart(product)}
+                />
               </div>
 
-              <img
-                src={deleteIcon}
-                alt="delete"
-                className="delete_icon"
-                onClick={() => removeFromCart(product)}
-              />
-            </div>
-
-            <button className="large_btn"> Checkout</button>
-          </>
-        ) : (
-          <div className="empty_cart_message">Your cart is empty</div>
-        )}
+              <button className="large_btn"> Checkout</button>
+            </>
+          ) : (
+            <div className="empty_cart_message">Your cart is empty</div>
+          )}
+        </div>
       </div>
-
-      <div className="product_image"></div>
 
       <div className="product_section">
         <div className="title_company">{product.company}</div>
