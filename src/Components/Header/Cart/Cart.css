@@ -12,3 +12,17 @@
   top: -7px;
   font-size: 10px;
 }
+
+@media screen and (min-width: 992px) {
+  .cart_icons img {
+    height: 16px;
+    width: auto;
+  }
+
+  .cart_dimension {
+    padding: 0 6px;
+    top: -4px;
+    right: -5px;
+    font-size: 8px;
+  }
+}

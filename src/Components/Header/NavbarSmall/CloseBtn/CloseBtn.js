@@ -1,12 +1,12 @@
-//import iconClose from "../../../../images/icon-close-menu.svg";
+import iconClose from "../../../../images/icon-close.svg";
 
 const CloseBtn = (props) => {
   return (
     <button
       onClick={() => props.setIsNavBarOpen(false)}
-      style={{ alignSelf: "flex-end" }}
+      style={{ alignSelf: "flex-start" }}
     >
-      {/* <img src={iconClose} alt="icon-close" /> */}
+      <img src={iconClose} alt="icon-close" />
     </button>
   );
 };

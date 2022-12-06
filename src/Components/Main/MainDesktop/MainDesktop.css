@@ -1,17 +1,13 @@
-.product_image {
-  width: 100%;
-  height: 290px;
-  background-size: cover;
-  background-position: center;
+.main_content_desktop {
+  margin: 0 10%;
   position: relative;
-  display: flex;
-  justify-content: center;
-  padding-top: 8px;
 }
 
-.cart_section {
-  width: 96%;
-  height: 85%;
+.cart_section_desktop {
+  width: 350px;
+  height: 250px;
+  top: 0;
+  right: 0;
   margin: auto;
   padding: 15px 20px;
   border-radius: 15px;
@@ -19,33 +15,50 @@
   position: absolute;
   background-color: white;
   visibility: hidden;
-}
-
-.arrows_container {
-  visibility: hidden;
-  width: 95%;
-  align-self: center;
-  display: flex;
-  justify-content: space-between;
-}
-
-.arrow {
-  border-radius: 100%;
-  height: 40px;
-  width: 40px;
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-}
-
-.arrow img {
-  width: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .visible {
   visibility: visible;
+}
+
+.main_content_desktop_container {
+  display: flex;
+  padding: 6%;
+}
+
+.main_content_desktop_left {
+  width: 45%;
+}
+
+.product_image_desktop {
+  width: 100%;
+  height: 290px;
+  border-radius: 15px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+}
+
+.slider_desktop {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.product_thumbnail_desktop {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
 }
 
 .product_section {

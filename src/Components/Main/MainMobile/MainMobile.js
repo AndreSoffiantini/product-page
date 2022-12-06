@@ -1,16 +1,16 @@
-import "./Main.css";
+import "./MainMobile.css";
 import { useContext, useState } from "react";
 import classnames from "classnames";
-import CartSetterContext from "../../Context/Cart/CartSetterContext";
-import CartContext from "../../Context/Cart/CartContext";
+import CartSetterContext from "../../../Context/Cart/CartSetterContext";
+import CartContext from "../../../Context/Cart/CartContext";
 
-import deleteIcon from "../../images/icon-delete.svg";
-import cart from "../../images/icon-cart.svg";
-import productThumbnail from "../../images/image-product-1-thumbnail.jpg";
-import plus from "../../images/icon-plus.svg";
-import minus from "../../images/icon-minus.svg";
-import previous from "../../images/icon-previous.svg";
-import next from "../../images/icon-next.svg";
+import deleteIcon from "../../../images/icon-delete.svg";
+import cart from "../../../images/icon-cart.svg";
+import productThumbnail from "../../../images/image-product-1-thumbnail.jpg";
+import plus from "../../../images/icon-plus.svg";
+import minus from "../../../images/icon-minus.svg";
+import previous from "../../../images/icon-previous.svg";
+import next from "../../../images/icon-next.svg";
 
 const Main = () => {
   const { addToCart, removeFromCart } = useContext(CartSetterContext);
@@ -77,8 +77,12 @@ const Main = () => {
         <div
           className={classnames("arrows_container", { visible: !isCartOpen })}
         >
-          <button className="arrow" onClick={() => handleArrowClick("prev")}>
-            <img src={previous} alt="previous" />
+          <button className="arrow">
+            <img
+              src={previous}
+              alt="previous"
+              onClick={() => handleArrowClick("previous")}
+            />
           </button>
           <button className="arrow">
             <img

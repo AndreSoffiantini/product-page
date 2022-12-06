@@ -1,20 +1,12 @@
 import "./NavbarLarge.css";
-//import Dropdown from "../DropdownLinks/Dropdown";
-//import Links from "../Links/Links";
-//import HeaderButtons from "../HeaderButtons/HeaderButtons";
+import Links from "../Links/Links";
 
 const NavbarLarge = () => {
   return (
     <div className="navbar_large">
-      {/* <nav className="navbar_link">
-        <Dropdown text="Features" />
-        <Dropdown text="Company" />
+      <nav className="navbar_link">
         <Links />
-      </nav> */}
-
-      {/* <div className="buttons_container">
-        <HeaderButtons />
-      </div> */}
+      </nav>
     </div>
   );
 };
